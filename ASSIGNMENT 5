@@ -1,0 +1,30 @@
+ASSIGNMENT 5: WRITE A PROGRAM THAT HANDLES EXCEPTIONS BY
+
+USING TRY, CATCH, AND FINALLY BLOCKS
+
+Requirement:
+
+Write a python program that prompts the user to input a number.
+
+Attempt to divide a fixed number (e.g., 10) by the user-provided number.
+
+Use try, catch, and finally blocks to handle any potential exceptions (e.g., division by
+
+zero).
+
+Print appropriate messages in the catch block for exceptions.
+
+Ensure the finally block is executed to perform any cleanup operations (e.g., closing
+
+resources).
+sol:
+def calculate_division():
+  try:
+    user_number = int(input("Enter a number: "))
+    result = 10 / user_number
+    print(f"The result of dividing 10 by {user_number} is: {result}")
+  except ZeroDivisionError:
+    print("Error: Cannot divide by zero. Please enter a non-zero number.")
+  finally:
+    print("Program execution completed.")
+calculate_division()
