@@ -1,0 +1,27 @@
+ASSIGNMENT 4: CREATE A SIMPLE CLASS PERSON WITH PROPERTIES NAME
+
+AND AGE, AND A FUCNTION TO DISPLAY THE DETAILS
+
+Requirement:
+
+Create a class named Person.
+
+The class should have two properties: name and age.
+
+Include a method displayDetails in the Person class that prints the name and age of the
+
+person.
+
+Instantiate an object of the Person class in the main method and call the displayDetails
+
+method.
+sol:
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  def displayDetails(self):
+    print(f"Name: {self.name}")
+    print(f"Age: {self.age}")
+person1 = Person("Sandeep", 24)
+person1.displayDetails()
