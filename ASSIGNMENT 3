@@ -1,0 +1,40 @@
+ASSIGNMENT 3: HOLLOW DIAMOND PYRAMID
+
+Expected output:
+    *
+   * *
+  *   *
+ *     *
+*       *
+ *     *
+  *   *
+    *
+sol:
+
+def print_hollow_diamond_pyramid(rows):
+  if not isinstance(rows, int) or rows <= 0:
+    raise ValueError("Number of rows must be a positive integer.")
+  mid = rows // 2
+  for i in range(1, mid + 1):
+    for _ in range(mid - i):
+      print(" ", end="")
+    for j in range(1, 2 * i):
+      if j == 1 or j == 2 * i - 1:
+        print("*", end="")
+      else:
+        print(" ", end="")
+    print()
+  for i in range(mid, 0, -1):
+    for _ in range(mid - i):
+      print(" ", end="")
+    for j in range(1, 2 * i):
+      if j == 1 or j == 2 * i - 1:
+        print("*", end="")
+      else:
+        print(" ", end="")
+    print()
+try:
+  rows = int(input("Enter the number of rows: "))
+  print_hollow_diamond_pyramid(rows)
+except ValueError as e:
+  print(e)
