@@ -1,0 +1,42 @@
+ASSIGNMENT 1
+ASSIGNMENT 1: PYTHON PROGRAM FOR DECIMAL TO HEXADECIMAL
+
+CONVERSION
+
+Given a decimal number N, convert N into an equivalent hexadecimal number i.e. convert the
+
+number with base value 10 to base value 16. The decimal number system uses 10 digits 0-9
+
+and the Hexadecimal number system uses 0-9, A-F to represent any numeric value.
+
+Examples of Decimal to Hexadecimal Conversion
+
+Input : 10
+
+Output: A
+
+Input : 2545
+
+Output: 9F1
+sol:def decimal_to_hexadecimal(decimal_number):
+
+  if not isinstance(decimal_number, int) or decimal_number < 0:
+    raise ValueError("Input must be a non-negative integer.")
+
+  hex_digits = "0123456789ABCDEF"
+  hexadecimal = ""
+
+  while decimal_number > 0:
+    remainder = decimal_number % 16  # Get the remainder for the current hexadecimal digit
+    hexadecimal = hex_digits[remainder] + hexadecimal  # Prepend the digit to the result
+    decimal_number //= 16  # Divide by 16 for the next iteration
+
+  return hexadecimal
+
+# Example usage
+try:
+  decimal_number = int(input("Enter a decimal number: "))
+  hexadecimal_number = decimal_to_hexadecimal(decimal_number)
+  print(f"The hexadecimal equivalent of {decimal_number} is: {hexadecimal_number}")
+except ValueError as e:
+  print(e)
